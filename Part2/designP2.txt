@@ -1,0 +1,38 @@
+Design of LISP Interpreter Part II -- Zuanxu Gong
+
+Content:
+1. Interpreter.java
+2. SExp.java
+3. Parser.java
+4. Func.java
+5. TokenOperation.java
+6. Makefile
+7. l2input.txt
+8. READMEP2.txt
+9. designP2.txt
+
+Four classes:
+1. Interpreter.java
+	A. Main class to read input line by line and stop properly with "$" and "$$".
+	B. Convert SExp content before $ sign into a string, which can be used for parsing.
+	C. Check the correctness of parentheses, empty input and whether the input is a list or an atom. 
+	D. Print the output dot notation in the tree structure recursively after parsing.
+
+2. SExp.java
+	A. This class corresponds to both atomic and non-atomic s-expressions, which is similar to a tree structure. 
+	B. Attributes include type, val, name, left and right.
+	C. Given the input notation, we first convert it into this tree structure, then output it in the dot notation.
+
+3. Parser.java
+	A. This class convert one string into a binary tree by checking whether next token is an interger atom, symbolic atom, non-atom, etc.
+	B. Check whether there exists illegal characters, whether these is an unexpected dot and $ sign, where the tree can be formed.
+
+4. TokenOperation.java
+	A. This class is used to get the next token, which will be used in the tree formation.
+
+5. Func.java
+	A. This class contains all the functions, such as eval(), plus(), apply(), etc.
+
+References:
+1. Professor's project description and two txt comments.
+2. Class discussion, Piazza discussion and classmates discussion.
